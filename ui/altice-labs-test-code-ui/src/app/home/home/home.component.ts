@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       this.form.reset();
       this.toastr.success("Loaded with success", "Success");
     }, (error) => {
-      console.log(error);
+      console.log("data error",error);
       this.labseqGeneratedData = error['error']['message'];
       this.toastr.error("Operation not allowed", "Error");
     });
