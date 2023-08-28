@@ -1,0 +1,25 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  mat-card {
+    max-width: 800px;
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    width: 80%;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+  }
+  
+  button {
+    margin-left: 30px; 
+  }

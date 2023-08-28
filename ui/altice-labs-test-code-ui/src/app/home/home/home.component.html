@@ -1,0 +1,21 @@
+<div class="center-container">
+    <mat-card>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <mat-card-content>
+
+                <mat-form-field>
+                    <input matInput type="number" placeholder="Enter a number" formControlName="inputNumber">
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+
+            </mat-card-content>
+        </form>
+        <br>
+        <div>
+            <h1>
+                The response generated was {{ labseqGeneratedData }}!
+            </h1>
+            
+        </div>
+    </mat-card>
+</div>
