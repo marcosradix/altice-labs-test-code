@@ -10,3 +10,7 @@ docker images
 ## run 
 docker run -p 8080:8080 <IMAGE ID>
 
+## run without docker
+mvn quarkus:dev
+
+
