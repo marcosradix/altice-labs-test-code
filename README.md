@@ -1,13 +1,13 @@
 ## documentation
 localhost:8080/q/swagger-ui/
 
-## create image
+## create docker image
 docker build -t altice .
 
-## see image
+## see docker image
 docker images
 
-## run 
+## run docker container
 docker run -p 8080:8080 <IMAGE ID>
 
 ## run without docker
