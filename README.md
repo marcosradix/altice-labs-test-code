@@ -8,5 +8,5 @@ docker build -t altice .
 docker images
 
 ## run 
-docker run -p 8080:8080 altice
+docker run -p 8080:8080 <IMAGE ID>
 
