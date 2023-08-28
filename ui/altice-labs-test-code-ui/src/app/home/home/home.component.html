@@ -1,3 +1,7 @@
+<!-- melhor usar um componente para a toolbar -->
+<mat-toolbar color="primary">
+    <span>LabSeq</span>
+  </mat-toolbar>
 <div class="center-container">
     <mat-card>
         <form [formGroup]="form" (ngSubmit)="submit()">
@@ -13,7 +17,7 @@
         <br>
         <div>
             <h1>
-                The response generated was {{ labseqGeneratedData }}!
+                The response generated was [ {{ labseqGeneratedData }} ]!
             </h1>
             
         </div>
