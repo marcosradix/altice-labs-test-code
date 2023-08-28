@@ -12,7 +12,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common'; 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
+
 
 @NgModule({
   declarations: [],
@@ -30,7 +32,8 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     MatCheckboxModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatButtonModule,
@@ -46,7 +49,8 @@ import { CommonModule } from '@angular/common';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule { }

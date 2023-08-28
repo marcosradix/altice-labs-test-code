@@ -24,17 +24,25 @@ export class HomeComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   inputNumber: any;
   labseqGeneratedData: any;
+  isLoading: boolean = false;
 
 
   submit() {
+    this.isLoading = true;
     let data = this.form.value;
     console.log('Input number:', data.inputNumber);
     this.labsecService.labseqLoad(data.inputNumber).subscribe(data => {
+
       this.labseqGeneratedData = data['data'];
-      this.form.reset();
       this.toastr.success("Loaded with success", "Success");
+      this.isLoading = false;
+      this.form.reset();
+      Object.keys(this.form.controls).forEach(key => {
+        this.form.get(key)?.clearValidators();
+      });
     }, (error) => {
-      console.log("data error",error);
+      this.isLoading = false;
+      console.log("data error", error);
       this.labseqGeneratedData = error['error']['message'];
       this.toastr.error("Operation not allowed", "Error");
     });

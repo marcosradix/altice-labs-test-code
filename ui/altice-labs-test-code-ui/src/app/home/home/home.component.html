@@ -4,16 +4,18 @@
   </mat-toolbar>
 <div class="center-container">
     <mat-card>
-        <form [formGroup]="form" (ngSubmit)="submit()">
             <mat-card-content>
-
+                <form [formGroup]="form" (ngSubmit)="submit()">
                 <mat-form-field>
                     <input matInput type="text" appNumericOnly placeholder="Enter a number" formControlName="inputNumber">
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit">Submit</button>
-
+                <button mat-raised-button color="primary" type="submit" [disabled]="isLoading || form.invalid">Submit</button>
+                <div *ngIf="isLoading">
+                    <mat-spinner [diameter]="60"></mat-spinner>
+                </div>
+            </form>
             </mat-card-content>
-        </form>
+        
         <br>
         <div>
             <h1>
