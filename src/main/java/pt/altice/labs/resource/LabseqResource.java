@@ -1,6 +1,7 @@
 package pt.altice.labs.resource;
 
 import lombok.RequiredArgsConstructor;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
@@ -28,6 +29,7 @@ public class LabseqResource {
             {@APIResponse(responseCode = "200", description = "Successful response"),
                     @APIResponse(responseCode = "400", description = "Bad request")}
     )
+    @Timed(name= "tempo_resposta_labseq")
     public LabseqResponseDTO labseq(@PathParam("index") Integer index) {
         return labseqService.labseqGenerator(index);
     }

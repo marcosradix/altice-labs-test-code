@@ -13,4 +13,6 @@ docker run -p 8080:8080 <IMAGE ID>
 ## run without docker
 mvn quarkus:dev
 
+## metrics - how long does it takes each endpoint to execute
+localhost:8080/q/metrics
 
