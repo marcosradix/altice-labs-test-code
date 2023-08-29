@@ -1,27 +1,31 @@
 <!-- melhor usar um componente para a toolbar -->
 <mat-toolbar color="primary">
     <span>LabSeq</span>
-  </mat-toolbar>
+</mat-toolbar>
 <div class="center-container">
     <mat-card>
-            <mat-card-content>
-                <form [formGroup]="form" (ngSubmit)="submit()">
+        <mat-card-content>
+            <form [formGroup]="form">
                 <mat-form-field>
-                    <input matInput type="text" appNumericOnly placeholder="Enter a number" formControlName="inputNumber">
+                    <input matInput type="text" appNumericOnly placeholder="Enter a number"
+                        formControlName="inputNumber">
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit" [disabled]="isLoading || form.invalid">Submit</button>
-                <div *ngIf="isLoading">
-                    <mat-spinner [diameter]="60"></mat-spinner>
-                </div>
             </form>
-            </mat-card-content>
-        
+            <div class="button-container">
+                <button mat-raised-button color="primary" type="button" [disabled]="isLoading || form.invalid"
+                    (click)="submit()">Submit</button>
+            </div>
+            <div *ngIf="isLoading">
+                <mat-spinner [diameter]="60"></mat-spinner>
+            </div>
+        </mat-card-content>
+
         <br>
         <div>
             <h1>
                 The response generated was [ {{ labseqGeneratedData }} ]!
             </h1>
-            
+
         </div>
     </mat-card>
 </div>

@@ -11,6 +11,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomeComponent implements OnInit {
 
+  form: FormGroup = new FormGroup({});
+  inputNumber: any;
+  labseqGeneratedData: any;
+  isLoading: boolean = false;
+
   constructor(private labsecService: LabsecService, private fb: FormBuilder, private toastr: ToastrService) {
 
     this.form = this.fb.group({
@@ -21,25 +26,20 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  form: FormGroup = new FormGroup({});
-  inputNumber: any;
-  labseqGeneratedData: any;
-  isLoading: boolean = false;
+
 
 
   submit() {
     this.isLoading = true;
     let data = this.form.value;
     console.log('Input number:', data.inputNumber);
-    this.labsecService.labseqLoad(data.inputNumber).subscribe(data => {
+    this.labsecService.labseqLoad(data.inputNumber).subscribe(resp => {
 
-      this.labseqGeneratedData = data['data'];
+      this.labseqGeneratedData = resp.data;
       this.toastr.success("Loaded with success", "Success");
       this.isLoading = false;
       this.form.reset();
-      Object.keys(this.form.controls).forEach(key => {
-        this.form.get(key)?.clearValidators();
-      });
+
     }, (error) => {
       this.isLoading = false;
       console.log("data error", error);
