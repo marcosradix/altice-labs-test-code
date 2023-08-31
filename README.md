@@ -8,7 +8,7 @@ docker build -t altice .
 docker images
 
 ## run docker container
-docker run -p 8080:8080 "<IMAGE ID>"
+docker run -p 8080:8080 (IMAGE ID)
 
 ## run without docker
 mvn quarkus:dev
