@@ -12,12 +12,15 @@
                 </mat-form-field>
             </form>
             <div class="button-container">
-                <button mat-raised-button color="primary" type="button" [disabled]="isLoading || form.invalid"
-                    (click)="submit()">Submit</button>
-            </div>
-            <div *ngIf="isLoading">
-                <mat-spinner [diameter]="60"></mat-spinner>
-            </div>
+                <button mat-raised-button color="primary" (click)="submit()" [disabled]="isLoading || form.invalid" class="align-right-button">
+                  <div *ngIf="!isLoading">
+                    Entrar
+                  </div>
+                  <span *ngIf="isLoading">
+                    <mat-spinner [diameter]="30"></mat-spinner>
+                  </span>
+                </button>
+              </div>
         </mat-card-content>
 
         <br>
